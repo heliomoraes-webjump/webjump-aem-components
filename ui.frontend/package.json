@@ -1,0 +1,51 @@
+{
+    "name": "@webjump/aem-components",
+    "version": "1.0.0",
+    "description": "AEM Components for React",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "webpack --config webpack.config.js",
+        "test": "jest",
+        "lint": "eslint src/**/*.jsx",
+        "prepublishOnly": "npm run build",
+        "publish": "npm publish"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/heliomoraes-webjump/webjump-aem-components.git"
+    },
+    "keywords": [
+        "aem",
+        "react",
+        "components",
+        "webjump"
+    ],
+    "author": "Helio Moraes <helio.moraes@webjump.ai>",
+    "license": "MIT",
+    "dependencies": {
+        "@adobe/aem-react-editable-components": "^2.1.1",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.26.0",
+        "@babel/preset-env": "^7.26.0",
+        "@testing-library/react": "^16.0.1",
+        "babel-loader": "^8.4.1",
+        "eslint": "^7.0.0",
+        "jest": "^27.0.0",
+        "webpack": "^5.0.0",
+        "webpack-cli": "^4.0.0"
+    },
+    "files": [
+        "dist",
+        "src"
+    ],
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

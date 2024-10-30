@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	jcr:primaryType="nt:unstructured"
+	jcr:title="Row"
+	sling:resourceType="cq/gui/components/authoring/dialog">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs">
+				<items jcr:primaryType="nt:unstructured">
+					<tab-1 jcr:primaryType="nt:unstructured"
+						jcr:title="Design Tokens"
+						sling:resourceType="granite/ui/components/coral/foundation/container">
+						<layout jcr:primaryType="nt:unstructured"
+							sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"/>
+						<items jcr:primaryType="nt:unstructured">
+							<column jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+									<padding cq-msm-lockable="./padding"
+										fieldLabel="Padding"
+										jcr:primaryType="nt:unstructured"
+										name="./padding"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<width cq-msm-lockable="./width"
+										fieldLabel="Width"
+										jcr:primaryType="nt:unstructured"
+										name="./width"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<height cq-msm-lockable="./height"
+										fieldLabel="Height"
+										jcr:primaryType="nt:unstructured"
+										name="./height"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<margin cq-msm-lockable="./margin"
+										fieldLabel="Margin"
+										jcr:primaryType="nt:unstructured"
+										name="./margin"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<gap cq-msm-lockable="./gap"
+										fieldLabel="Gap"
+										jcr:primaryType="nt:unstructured"
+										name="./gap"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<strecth cq-msm-lockable="./strecth"
+										fieldLabel="Strecth"
+										jcr:primaryType="nt:unstructured"
+										name="./strecth"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<justify cq-msm-lockable="./justify"
+										fieldLabel="Justify"
+										jcr:primaryType="nt:unstructured"
+										name="./justify"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<align cq-msm-lockable="./align"
+										fieldLabel="Align"
+										jcr:primaryType="nt:unstructured"
+										name="./align"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<flexDirection cq-msm-lockable="./flexDirection"
+										fieldLabel="Flex Direction"
+										jcr:primaryType="nt:unstructured"
+										name="./flexDirection"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<shouldBeColumn jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/checkbox"
+										text="Column mode?"
+										name="./shouldBeColumn"
+										value="true"
+										uncheckedValue="false"/>
+									<shouldBeColumnType jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/foundation/form/hidden"
+										name="./shouldBeColumn@TypeHint"
+										value="Boolean"/>
+									<childWidth cq-msm-lockable="./childWidth"
+										fieldLabel="Child Width"
+										jcr:primaryType="nt:unstructured"
+										name="./childWidth"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<childJustify cq-msm-lockable="./childJustify"
+										fieldLabel="Child Justify"
+										jcr:primaryType="nt:unstructured"
+										name="./childJustify"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+									<childAlign cq-msm-lockable="./childAlign"
+										fieldLabel="Child Align"
+										jcr:primaryType="nt:unstructured"
+										name="./childAlign"
+										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+								</items>
+							</column>
+						</items>
+					</tab-1>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>
