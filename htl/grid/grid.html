@@ -1,0 +1,31 @@
+<sly data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
+    <h1>
+        Titulo
+    </h1>
+    <p>Descricao</p>
+    <div data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+        id="${container.id}"
+        class="cmp-grid${wcmmode.edit ? ' {0}': '' @ format=[allowed.cssClass]}"
+        aria-label="${container.accessibilityLabel}"
+        role="${container.roleAttribute}"
+        style="${container.backgroundStyle @ context='styleString'}">
+        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+            data-sly-use.allowedTemplate="allowedcomponents.html"
+            data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
+        <sly data-sly-test="${!isAllowedApplicable}"
+            data-sly-set.items="${container.children || container.items}"
+            data-sly-repeat="${items}" data-sly-resource="${item.resource || item.path}"></sly>
+    </div>
+    <sly data-sly-test="${!isAllowedApplicable && !wcmmode.disabled}"
+    data-sly-resource="${resource.path @ resourceType='core/wcm/components/container/v1/container/new', appendPath='/*', decorationTagName='div', cssClassName='new section'}" />
+</sly>
+
+
+<style>
+    .cmp-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: ${properties.columnsDesktop @ context='unsafe'}px;
+    }
+</style>

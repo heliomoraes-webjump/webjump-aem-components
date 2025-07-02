@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Grid Padrão"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured"
+                    sling:hideChildren="[*]">
+                    <properties jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:orderBefore="cq:styles"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        maximized="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <id cq-msm-lockable="./id"
+                                                fieldLabel="ID"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./id"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                            <columnsMobile cq-msm-lockable="./columnsMobile"
+                                                fieldLabel="Colunas Mobile - até 676px"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./columnsMobile"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                min="1"/>
+                                            <columnsTablet cq-msm-lockable="./columnsTablet"
+                                                fieldLabel="Colunas Tablet - até 1366px"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./columnsTablet"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                min="1"/>
+                                            <columnsDesktop cq-msm-lockable="./columnsDesktop"
+                                                fieldLabel="Colunas Desktop"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./columnsDesktop"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                min="1"/>
+                                            <gapX cq-msm-lockable="./gapX"
+                                                fieldLabel="Gap Horizontal"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./gapX"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                min="0"/>
+                                            <gapY cq-msm-lockable="./gapY"
+                                                fieldLabel="Gap Vertical"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./gapY"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                min="0"/>
+                                            <isMobileCarousel cq-msm-lockable="./isMobileCarousel"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./isMobileCarousel"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                text="Exibir como um carrosel em telas mobile."
+                                                value="{Boolean}true"/>
+                                            <lastRow cq-msm-lockable="./lastRow"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./lastRow"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                text="Ultima linha centralizada."
+                                                value="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,6 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <p data-sly-test.text="${properties.textArea}"
+       data-sly-unwrap="${properties.textArea}">${properties.textArea @ context = 'html'}</p>
+    
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.textArea, classAppend='cmp-richtext'}"/>
+</sly>
