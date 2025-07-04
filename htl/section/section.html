@@ -1,29 +1,15 @@
-<sly data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
-    <section data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
-         id="${container.id}"
-         class="cmp-sectiones${wcmmode.edit ? ' {0}': '' @ format=[allowed.cssClass]} ${properties.componentClass @ context='unsafe'}"
-         aria-label="${container.accessibilityLabel}"
-         role="${container.roleAttribute}">
-        <sly data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
-             data-sly-use.allowedTemplate="allowedcomponents.html"
-             data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"></sly>
-        <sly data-sly-test="${!isAllowedApplicable}"
-             data-sly-set.items="${container.children || container.items}"
-             data-sly-repeat="${items}" data-sly-resource="${item.resource || item.path @ decoration=true}"></sly>
-        <sly data-sly-test="${!isAllowedApplicable && !wcmmode.disabled}"
-             data-sly-resource="${resource.path @ resourceType='core/wcm/components/container/v1/container/new', appendPath='/*', decorationTagName='div', cssClassName='new section'}" />
-    </section>
+<div class="cmp-section" data-sly-resource="${'container' @ cssClassName='cmp-section', resourceType='ibcmed/components/container'}">
+</div>
 
-    <style>
-       ${properties.textareacontent @ context='unsafe'}
-    </style>
+<style>
+    .cmp-section {
+    background-color: ${properties.bgsection @ context='unsafe'};
+    }
+</style>
 
-      <sly
-    data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
-    data-sly-use.customStyleTemplate="/apps/ibcmediro/components/base_container/template.html" >
-    <sly data-sly-call="${customStyleTemplate.vars @ style=''}"></sly>
-    <sly data-sly-call="${clientlib.all @ categories='ibcmed.section'}" />
-  </sly>
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
+  data-sly-use.customStyleTemplate="/apps/ibcmed/components/base_container/template.html">
+  <sly
+    data-sly-call="${clientlib.all @ categories='ibcmed.section'}" />
+  <sly data-sly-call="${customStyleTemplate.vars @ style=''}"></sly>
 </sly>
-
-

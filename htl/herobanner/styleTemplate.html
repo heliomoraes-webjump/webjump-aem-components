@@ -1,0 +1,29 @@
+<template data-sly-template.style="${ @ properties, container}">
+  <style>
+     <sly data-sly-test="${properties.backgroundColor}">
+       #${container.id} {
+             background-color: ${properties.backgroundColor @ context='unsafe'};
+       }
+     </sly>
+
+     <sly data-sly-test="${properties.paddingMob}">
+       #${container.id} {
+             padding-left: ${properties.paddingMob @ context='unsafe'}px;
+             padding-right: ${properties.paddingMob @ context='unsafe'}px;
+       }
+     </sly>
+
+     <sly data-sly-test="${properties.paddingDesk}">
+       @media screen and (min-width: 768px) {
+          #${container.id} {
+             padding-left: ${properties.paddingDesk @ context='unsafe'}px;
+             padding-right: ${properties.paddingDesk @ context='unsafe'}px;
+          }
+       }
+    </sly>
+
+     <sly data-sly-test="${properties.textareacontent}">
+       ${properties.textareacontent @ context='unsafe'}
+     </sly>
+  </style>
+</template>

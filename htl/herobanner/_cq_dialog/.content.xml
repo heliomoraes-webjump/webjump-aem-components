@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:cq="http://www.day.com/jcr/cq/1.0"
+	xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+	xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+	jcr:primaryType="nt:unstructured"
+	jcr:title="Hero Banner"
+	sling:resourceType="cq/gui/components/authoring/dialog"
+	extraClientlibs="invillia.react">
+	<content jcr:primaryType="nt:unstructured"
+		sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs jcr:primaryType="nt:unstructured"
+				sling:resourceType="granite/ui/components/coral/foundation/tabs">
+				<items jcr:primaryType="nt:unstructured"
+					sling:hideChildren="[*]">
+					<properties jcr:primaryType="nt:unstructured"
+						jcr:title="Properties"
+						sling:orderBefore="cq:styles"
+						sling:resourceType="granite/ui/components/coral/foundation/container"
+						maximized="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<columns jcr:primaryType="nt:unstructured"
+								sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+								margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column jcr:primaryType="nt:unstructured"
+										sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+
+											<!-- Posiçao do Texto - Select -->
+											<select jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/select"
+												fieldLabel="Posiçao do texto"
+												value="left"
+												name="./positionText">
+												<items jcr:primaryType="nt:unstructured">
+													<positionLeft jcr:primaryType="nt:unstructured"
+														text="Esquerda"
+														value="left"/>
+													<positionRight jcr:primaryType="nt:unstructured"
+														text="Direita"
+														value="right"/>
+												</items>
+											</select>
+
+											<color jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+												fieldLabel="Cor de fundo das informações"
+												autogenerateColors="shades"
+												showSwatches="{Boolean}true"
+												showDefaultColors="{Boolean}true"
+												name="./blurColor"
+												value="HEX"
+												required="{Boolean}false" />
+
+											<blurSize cq-msm-lockable="./blurSize"
+												fieldLabel="Tamanho em % da largura do conteúdo"
+												jcr:primaryType="nt:unstructured"
+												value="50"
+												name="./blurSize"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												min="0"/>
+
+											<backgroundInfo jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												name="./backgroundInfo"
+												text="Cor de fundo apenas nas informações"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
+
+											<!-- Background Image Desktop/Tablet -->
+											<backgroundImageDesktop jcr:primaryType="nt:unstructured"
+												sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+												fieldLabel="Imagem de fundo em dispositivos Dektop/Tablet."
+												allowUpload="{Boolean}false"
+												autoStart="{Boolean}false"
+												class="cq-droptarget"
+												fileNameParameter="./backgroundimagedesktopfilename"
+												fileReferenceParameter="./backgroundimagedesktopref"
+												mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+												multiple="{Boolean}false"
+												name="./backgroundimagedesktop"
+												title="Imagem de fundo*"
+												uploadUrl="${suffix.path}"
+												useHTML5="{Boolean}true"/>
+
+											<!-- Background Mobile -->
+											<backgroundImageMobile jcr:primaryType="nt:unstructured"
+												sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+												fieldLabel="Imagem de fundo em dispositivos Mobile."
+												allowUpload="{Boolean}false"
+												autoStart="{Boolean}false"
+												class="cq-droptarget"
+												fileNameParameter="./backgroundimagemobilefilename"
+												fileReferenceParameter="./backgroundimagemobileref"
+												mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+												multiple="{Boolean}false"
+												name="./backgroundimagemobile"
+												title="Imagem de fundo*"
+												uploadUrl="${suffix.path}"
+												useHTML5="{Boolean}true"/>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</properties>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

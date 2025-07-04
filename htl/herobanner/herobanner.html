@@ -1,0 +1,42 @@
+<sly data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
+  <div
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    id="${container.id}"
+    class="cmp-herobanner${wcmmode.edit ? ' {0}': '' @ format=[allowed.cssClass]} ${properties.componentClass @ context='unsafe'}"
+    aria-label="${container.accessibilityLabel}"
+    role="${container.roleAttribute}"
+  >
+    <img
+      class="cmp-herobanner__image"
+      src="${properties.backgroundimagemobileref @ context='unsafe'}"
+      alt=""
+    />
+
+    <div class="cmp-herobanner__content">
+      <sly
+        data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
+        data-sly-use.allowedTemplate="allowedcomponents.html"
+        data-sly-call="${allowedTemplate.allowedcomponents @ title=allowed.title, components=allowed.components}"
+      ></sly>
+      <sly
+        data-sly-test="${!isAllowedApplicable}"
+        data-sly-set.items="${container.children || container.items}"
+        data-sly-repeat="${items}"
+        data-sly-resource="${item.resource || item.path @ decoration=true}"
+      ></sly>
+      <sly
+        data-sly-test="${!isAllowedApplicable && !wcmmode.disabled}"
+        data-sly-resource="${resource.path @ resourceType='core/wcm/components/container/v1/container/new', appendPath='/*', decorationTagName='div', cssClassName='new section'}"
+      />
+    </div>
+  </div>
+
+  <sly
+    data-sly-use.styleTemplate="styleTemplate.html"
+    data-sly-call="${styleTemplate.style @ properties=properties, container=container}"
+  ></sly>
+
+  <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='ibcmed.herobanner'}" />
+  </sly>
+</sly>
