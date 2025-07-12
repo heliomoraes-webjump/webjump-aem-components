@@ -1,23 +1,33 @@
 <template data-sly-template.style="${ @ properties, container}">
   <style>
-     <sly data-sly-test="${properties.backgroundColor}">
+    <sly data-sly-test="${properties.hasHeader ? false : true}">
+        :root {
+            --first-container-spacing: 0px;
+        }
+    </sly>
+
+     <sly data-sly-test="${properties.contentColor}">
        #${container.id} {
-             background-color: ${properties.backgroundColor @ context='unsafe'};
+        .cmp-herobanner__content {
+             background-color: ${properties.contentColor @ context='unsafe'};
+        }
        }
      </sly>
 
-     <sly data-sly-test="${properties.paddingMob}">
-       #${container.id} {
-             padding-left: ${properties.paddingMob @ context='unsafe'}px;
-             padding-right: ${properties.paddingMob @ context='unsafe'}px;
+    <sly data-sly-test="${properties.contentSizeMob}">
+      #${container.id} {
+      .cmp-herobanner__content {
+         width: ${properties.contentSizeMob @ context='unsafe'}%;
+      }
        }
-     </sly>
+    </sly>
 
-     <sly data-sly-test="${properties.paddingDesk}">
+     <sly data-sly-test="${properties.contentSizeDesk}">
        @media screen and (min-width: 768px) {
           #${container.id} {
-             padding-left: ${properties.paddingDesk @ context='unsafe'}px;
-             padding-right: ${properties.paddingDesk @ context='unsafe'}px;
+            .cmp-herobanner__content {
+               width: ${properties.contentSizeDesk @ context='unsafe'}%;
+            }
           }
        }
     </sly>

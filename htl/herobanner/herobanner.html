@@ -2,17 +2,26 @@
   <div
     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
     id="${container.id}"
-    class="cmp-herobanner${wcmmode.edit ? ' {0}': '' @ format=[allowed.cssClass]} ${properties.componentClass @ context='unsafe'}"
+    class="cmp-herobanner ${properties.componentClass @ context='unsafe'} ${wcmmode.edit ? ' {0}': '' @ format=[allowed.cssClass]} ${wcmmode.edit ? 'cmp-in-editor': ''}"
     aria-label="${container.accessibilityLabel}"
     role="${container.roleAttribute}"
   >
     <img
-      class="cmp-herobanner__image"
-      src="${properties.backgroundimagemobileref @ context='unsafe'}"
+      data-sly-test="${properties.backgroundImageDeskRef}"
+      class="cmp-herobanner__image ${properties.backgroundImageMobRef ? 'cmp-herobanner__image--desktop' : 'cmp-herobanner__image--full'}"
+      src="${properties.backgroundImageDeskRef @ context='unsafe'}"
+      alt=""
+    />
+    <img
+      data-sly-test="${properties.backgroundImageMobRef}"
+      class="cmp-herobanner__image--mobile"
+      src="${properties.backgroundImageMobRef @ context='unsafe'}"
       alt=""
     />
 
-    <div class="cmp-herobanner__content">
+    <div
+      class="cmp-herobanner__content ${properties.positionText @ context='unsafe'} ${!properties.backgroundImageMobRef && !properties.backgroundImageDeskRef ? 'onlyContent' : '' }"
+    >
       <sly
         data-sly-test.isAllowedApplicable="${allowed.isApplicable}"
         data-sly-use.allowedTemplate="allowedcomponents.html"

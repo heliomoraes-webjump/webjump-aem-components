@@ -28,14 +28,25 @@
 									<column jcr:primaryType="nt:unstructured"
 										sling:resourceType="granite/ui/components/coral/foundation/container">
 										<items jcr:primaryType="nt:unstructured">
+											<!-- Manter espaçamento header - Checkbox -->
+											<hasHeader jcr:primaryType="nt:unstructured"
+												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+												fieldDescription="Adiciona espaçamento no topo do componente para manter o espaçamento do cabeçalho."
+												name="./hasHeader"
+												text="Landing page com cabeçalho. ( Header )"
+												uncheckedValue="{Boolean}false"
+												value="{Boolean}true"/>
 
-											<!-- Posiçao do Texto - Select -->
+											<!-- Posiçao do Conteúdo - Select -->
 											<select jcr:primaryType="nt:unstructured"
 												sling:resourceType="granite/ui/components/coral/foundation/form/select"
-												fieldLabel="Posiçao do texto"
-												value="left"
+												fieldLabel="Posiçao do conteúdo"
+												value="center"
 												name="./positionText">
 												<items jcr:primaryType="nt:unstructured">
+													<positionCenter jcr:primaryType="nt:unstructured"
+														text="Centralizado"
+														value="center"/>
 													<positionLeft jcr:primaryType="nt:unstructured"
 														text="Esquerda"
 														value="left"/>
@@ -45,30 +56,31 @@
 												</items>
 											</select>
 
-											<color jcr:primaryType="nt:unstructured"
+											<contentColor jcr:primaryType="nt:unstructured"
 												sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
-												fieldLabel="Cor de fundo das informações"
+												fieldLabel="Cor de fundo do conteúdo"
 												autogenerateColors="shades"
 												showSwatches="{Boolean}true"
 												showDefaultColors="{Boolean}true"
-												name="./blurColor"
+												name="./contentColor"
 												value="HEX"
 												required="{Boolean}false" />
 
-											<blurSize cq-msm-lockable="./blurSize"
-												fieldLabel="Tamanho em % da largura do conteúdo"
+											<contentSizeDesk cq-msm-lockable="./contentSizeDesk"
+												fieldLabel="Tamanho em % da largura do conteúdo desktop"
 												jcr:primaryType="nt:unstructured"
 												value="50"
-												name="./blurSize"
+												name="./contentSizeDesk"
 												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
 												min="0"/>
 
-											<backgroundInfo jcr:primaryType="nt:unstructured"
-												sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-												name="./backgroundInfo"
-												text="Cor de fundo apenas nas informações"
-												uncheckedValue="{Boolean}false"
-												value="{Boolean}true"/>
+											<contentSizeMob cq-msm-lockable="./contentSizeMob"
+												fieldLabel="Tamanho em % da largura do conteúdo mobile"
+												jcr:primaryType="nt:unstructured"
+												value="100"
+												name="./contentSizeMob"
+												sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+												min="0"/>
 
 											<!-- Background Image Desktop/Tablet -->
 											<backgroundImageDesktop jcr:primaryType="nt:unstructured"
@@ -77,11 +89,11 @@
 												allowUpload="{Boolean}false"
 												autoStart="{Boolean}false"
 												class="cq-droptarget"
-												fileNameParameter="./backgroundimagedesktopfilename"
-												fileReferenceParameter="./backgroundimagedesktopref"
+												fileNameParameter="./backgroundImageDeskFilename"
+												fileReferenceParameter="./backgroundImageDeskRef"
 												mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
 												multiple="{Boolean}false"
-												name="./backgroundimagedesktop"
+												name="./backgroundImageDesk"
 												title="Imagem de fundo*"
 												uploadUrl="${suffix.path}"
 												useHTML5="{Boolean}true"/>
@@ -93,11 +105,11 @@
 												allowUpload="{Boolean}false"
 												autoStart="{Boolean}false"
 												class="cq-droptarget"
-												fileNameParameter="./backgroundimagemobilefilename"
-												fileReferenceParameter="./backgroundimagemobileref"
+												fileNameParameter="./backgroundImageMobFilename"
+												fileReferenceParameter="./backgroundImageMobRef"
 												mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
 												multiple="{Boolean}false"
-												name="./backgroundimagemobile"
+												name="./backgroundImageMob"
 												title="Imagem de fundo*"
 												uploadUrl="${suffix.path}"
 												useHTML5="{Boolean}true"/>
