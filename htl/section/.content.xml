@@ -3,6 +3,6 @@
     cq:isContainer="{Boolean}true"
     cq:styleElements="[div,section,article,main,aside,header,footer]"
     jcr:primaryType="cq:Component"
+    sling:resourceSuperType="iro/components/container"
     jcr:title="Section"
-    sling:resourceSuperType="ibcmed/components/base_container"
-    componentGroup="IBCMED - Content"/>
+    componentGroup="IRO - Content"/>

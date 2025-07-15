@@ -1,43 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Seção"
+    jcr:title="Section"
     sling:resourceType="cq/gui/components/authoring/dialog">
-    <content jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <tabs jcr:primaryType="nt:unstructured">
-                <items jcr:primaryType="nt:unstructured">
-                    <generalProperties
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Geral"
-                        sling:orderBefore="style"
-                        sling:resourceType="granite/ui/components/coral/foundation/container"
-                        margin="{Boolean}true">
-                        <items jcr:primaryType="nt:unstructured">
-                            <columns
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
-                                margin="{Boolean}true">
-                                <items jcr:primaryType="nt:unstructured">
-                                    <column
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/container">
-                                        <items jcr:primaryType="nt:unstructured">
-                                        <colorpicker
-                                                jcr:primaryType="nt:unstructured"
-                                                sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
-                                                fieldLabel="Cor de fundo da seção"
-                                                fieldDescription="Este campo define a cor de fundo da seção."
-                                                name="./bgsection"/>
-                                        </items>
-                                    </column>
-                                </items>
-                            </columns>
-                        </items>
-                    </generalProperties>
-                </items>
+            <tabs jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+               	<items jcr:primaryType="nt:unstructured">
+					<subtab-1 jcr:primaryType="nt:unstructured" jcr:title="Estilização" sling:resourceType="granite/ui/components/coral/foundation/container">
+						<layout jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns" />
+						<items jcr:primaryType="nt:unstructured">
+							<column jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/container">
+								<items jcr:primaryType="nt:unstructured">
+
+									<backgroundColor jcr:primaryType="nt:unstructured" sling:resourceType="granite/ui/components/coral/foundation/form/colorfield" defaultValue="transparent" fieldLabel="Escolha uma cor de fundo para a seção" fieldDescription="Cor de fundo." name="./backgroundColor"/>
+
+                                    <image jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Imagem"
+                                        fileNameParameter="./imagefileName"
+                                        fileReferenceParameter="./imageref"
+                                        mimeTypes="[image/gif,image/jpeg,image/png,image/webp,image/tiff,image/svg+xml]"
+                                        multiple="{Boolean}false"
+                                        name="./image"
+                                        title="Drag to select image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+									
+									<paddingDesk jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+									fieldDescription="Defina padding Desk, caso não definido será utilizado valores padrões"
+									fieldLabel="padding da Seção em Desktop"
+									name="./paddingDesk"/>
+
+									<paddingMob jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+									fieldDescription="Defina padding Desk, caso não definido será utilizado valores padrões"
+									fieldLabel="padding da Seção em Mobile"
+									name="./paddingMob"/>
+
+                                    <paddingMob jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+									fieldDescription="Defina padding Desk, caso não definido será utilizado valores padrões"
+									fieldLabel="padding da Seção em Mobile"
+									name="./paddingMob"/>
+
+                                    <componentClass
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="This is a text area"
+                                    emptyText="Please add your descriptive text"
+                                    name="./componentClass"/>
+									</items>
+							</column>
+						</items>
+					</subtab-1>
+				</items>
             </tabs>
         </items>
     </content>
